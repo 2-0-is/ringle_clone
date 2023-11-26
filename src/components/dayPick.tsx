@@ -11,7 +11,7 @@ const DayPick = () => {
   const [range, setRange] = useState<DateRange | undefined>(defaultSelected);
 
   return (
-    <div className="flex-col justify-center mr-auto">
+    <div className="flex-col justify-center mr-4">
       <div className="h-[110px]" />
       <DayPicker
         mode="range"
