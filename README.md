@@ -20,6 +20,12 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
+## Discussion
+
+시간상 디자인을 완전하게 구현하지 못했고 일부 아이콘은 비슷한 아이콘을 찾기 어려워 사이트의 이미지 링크를 사용하였습니다.
+
+날짜 관련 부분에서 디테일한 구현을 할 시간이 부족하여 날짜 텍스트 등을 하드코딩하여 재사용이 어렵지만, 필요하다면 날짜를 Date 형식으로 저장하여 보완할 수 있을 것입니다.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
