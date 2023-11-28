@@ -1,3 +1,4 @@
+import { useState } from "react";
 import useConsts from "./useConsts";
 
 interface IDeleteProps {
@@ -52,11 +53,13 @@ const DeleteModal = ({
             {"2023년 "}
             {day_text}
           </span>
-          <span>{`${
-            selectedTime % 2 == 1
-              ? time_list.at(Math.floor(selectedTime / 2))?.half_text
-              : time_list.at(Math.floor(selectedTime / 2))?.hour_text
-          } `}</span>
+          <span>
+            {selectedTime % 2 === 0
+              ? time_list.filter((elem) => elem.time === selectedTime).at(0)
+                  ?.hour_text
+              : time_list.filter((elem) => elem.time === selectedTime - 1).at(0)
+                  ?.half_text}
+          </span>
         </div>
         <div className="mx-4 my-1">
           {tutor_list.at(selectedTutor - 1)?.name}
