@@ -3,9 +3,17 @@ import TriangleIcon from "@/../public/icons/down_triangle.svg";
 import TutorItem from "./tutorItem";
 import useConsts from "./useConsts";
 
-const Tutors = () => {
-  const { tutor_list, time_selected, selected_tutor, toggleSelect } =
-    useConsts();
+interface ITutorProps {
+  time_selected: boolean;
+  selected_tutor: number;
+  toggleSelect: (id: number) => void;
+}
+const Tutors = ({
+  time_selected,
+  selected_tutor,
+  toggleSelect,
+}: ITutorProps) => {
+  const { tutor_list } = useConsts();
 
   return (
     <div className="w-full h-[600px] border-l border-gray-300">
@@ -26,7 +34,7 @@ const Tutors = () => {
           </button>
         </div>
       </div>
-      {time_selected && (
+      {!time_selected && (
         <div className="empty-slot flex justify-center items-center">
           <div className="box-wrapper border border-gray-300 flex flex-col justify-center my-32 p-8">
             <div className="text-gray-600 m-auto py-2">
@@ -38,20 +46,22 @@ const Tutors = () => {
           </div>
         </div>
       )}
-      <div className="tutor-list overflow-auto">
-        {tutor_list.map((elem) => {
-          return (
-            <TutorItem
-              key={elem.id}
-              id={elem.id}
-              name={elem.name}
-              major={elem.major}
-              selected_tutor={selected_tutor}
-              toggleSelect={toggleSelect}
-            />
-          );
-        })}
-      </div>
+      {time_selected && (
+        <div className="tutor-list overflow-auto">
+          {tutor_list.map((elem) => {
+            return (
+              <TutorItem
+                key={elem.id}
+                id={elem.id}
+                name={elem.name}
+                major={elem.major}
+                selected_tutor={selected_tutor}
+                toggleSelect={toggleSelect}
+              />
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 };

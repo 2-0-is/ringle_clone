@@ -1,7 +1,24 @@
 "use client";
 import DaySlots from "./daySlots";
+import useConsts from "./useConsts";
 
-const TimePick = () => {
+interface ITimePickProps {
+  selectSlot: (day: number, time: number) => void;
+  timeSize: number;
+  selectedDay: number;
+  selectedTime: number;
+  selectedTutor: number;
+  setDeleteOpen: (arg0: boolean) => void;
+}
+
+const TimePick = ({
+  selectSlot,
+  timeSize,
+  selectedDay,
+  selectedTime,
+  selectedTutor,
+  setDeleteOpen,
+}: ITimePickProps) => {
   return (
     <div className="max-h-full mr-auto">
       <div className="head inline-flex justify-start my-4">
@@ -135,13 +152,69 @@ const TimePick = () => {
           </div>
           <div className="time-box-wrapper">
             <div className="week-hour flex flex-row">
-              <DaySlots slot={1} />
-              <DaySlots slot={1} />
-              <DaySlots slot={1} />
-              <DaySlots slot={1} />
-              <DaySlots slot={1} />
-              <DaySlots slot={1} />
-              <DaySlots slot={1} />
+              <DaySlots
+                slot={timeSize}
+                day={1}
+                selectSlot={selectSlot}
+                selectedDay={selectedDay}
+                selectedTime={selectedTime}
+                selectedTutor={selectedTutor}
+                setDeleteOpen={setDeleteOpen}
+              />
+              <DaySlots
+                slot={timeSize}
+                day={2}
+                selectSlot={selectSlot}
+                selectedDay={selectedDay}
+                selectedTime={selectedTime}
+                selectedTutor={selectedTutor}
+                setDeleteOpen={setDeleteOpen}
+              />
+              <DaySlots
+                slot={timeSize}
+                day={3}
+                selectSlot={selectSlot}
+                selectedDay={selectedDay}
+                selectedTime={selectedTime}
+                selectedTutor={selectedTutor}
+                setDeleteOpen={setDeleteOpen}
+              />
+              <DaySlots
+                slot={timeSize}
+                day={4}
+                selectSlot={selectSlot}
+                selectedDay={selectedDay}
+                selectedTime={selectedTime}
+                selectedTutor={selectedTutor}
+                setDeleteOpen={setDeleteOpen}
+              />
+              <DaySlots
+                slot={timeSize}
+                day={5}
+                selectSlot={selectSlot}
+                selectedDay={selectedDay}
+                selectedTime={selectedTime}
+                selectedTutor={selectedTutor}
+                setDeleteOpen={setDeleteOpen}
+              />
+              <DaySlots
+                slot={timeSize}
+                day={6}
+                selectSlot={selectSlot}
+                selectedDay={selectedDay}
+                selectedTime={selectedTime}
+                selectedTutor={selectedTutor}
+                setDeleteOpen={setDeleteOpen}
+              />
+              <DaySlots
+                slot={timeSize}
+                day={7}
+                selectSlot={selectSlot}
+                selectedDay={selectedDay}
+                selectedTime={selectedTime}
+                selectedTutor={selectedTutor}
+                setDeleteOpen={setDeleteOpen}
+              />
             </div>
           </div>
         </div>
