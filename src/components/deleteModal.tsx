@@ -19,18 +19,18 @@ const DeleteModal = ({
   const { tutor_list, time_list } = useConsts();
   const day_text: string =
     selectedDay === 1
-      ? "11월 26일 (일) "
+      ? "12월 24일 (일) "
       : selectedDay === 2
-      ? "11월 27일 (월) "
+      ? "12월 25일 (월) "
       : selectedDay === 3
-      ? "11월 28일 (화) "
+      ? "12월 26일 (화) "
       : selectedDay === 4
-      ? "11월 29일 (수) "
+      ? "12월 27일 (수) "
       : selectedDay === 5
-      ? "11월 30일 (목) "
+      ? "12월 28일 (목) "
       : selectedDay === 6
-      ? "12월 1일 (금) "
-      : "12월 2일 (토) ";
+      ? "12월 29일 (금) "
+      : "12월 30일 (토) ";
   return (
     <div
       className="absolute top-0 w-screen h-screen z-40 bg-gray-300 bg-opacity-40 flex"
